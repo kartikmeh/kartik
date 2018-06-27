@@ -18,7 +18,7 @@ pipeline{
 				}
 			}
 		}
-		stage ('Deployment Stage'){
+		stage ('Build Stage'){
 
 			steps {
 				withMaven(maven : 'Maven'){
@@ -26,5 +26,24 @@ pipeline{
 				}
 			}
 		}
+
+		stage ('upload') {
+  		  gitlabCommitStatus("upload") {
+     		  def server = Artifactory.server "Jfrog"
+   	          def buildInfo = Artifactory.newBuildInfo()
+   	          buildInfo.env.capture = true
+    		  buildInfo.env.collect()
+
+    			  def uploadSpec = """{
+     				   "files": [
+       					   {
+       						    "pattern": "C:\Program Files (x86)\Jenkins\workspace\pipeline2\target\mehta.war",
+        	       				    "target": "kartik_r"
+       						   }   
+       					 ]
+      }"""
+      }
+      }
 	}
+
 }
