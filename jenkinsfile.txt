@@ -37,7 +37,7 @@ pipeline{
     			  def uploadSpec = """{
      				   "files": [
        					   {
-       						    "pattern": "C:\test\target\mehta.war",
+       						    "pattern": "C:/test/target/mehta.war",
         	       				    "target": "kartik_r"
        						   }   
        					 ]
