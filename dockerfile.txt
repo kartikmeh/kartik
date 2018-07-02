@@ -1,0 +1,7 @@
+from tomcat
+
+run wget -O http://kartik:Kittu@123@10.127.126.113/kartik/usr/local/tomcat/webapps/HelloDevOps.war http://10.127.126.113:8081/artifactory/kartik_r/com/nagarro/devops/training/2018/kartik/HelloDevOps/HelloDevOps/0.0.1-SNAPSHOT/HelloDevOps-0.0.1-SNAPSHOT.war
+
+expose 8080
+
+cmd /usr/local/tomcat/bin/catalina.sh run
