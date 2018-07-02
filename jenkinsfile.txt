@@ -15,8 +15,7 @@ pipeline{
 		stage ('DockerFile Deployement')
 		{
 			steps{
-				bat 'C:/Users/kartik/AppData/Local/Programs/Git/usr/bin/ssh.exe'
-				bat 'ssh kartik@10.127.126.113'
+				bat 'C:/Users/kartik/AppData/Local/Programs/Git/usr/bin/ssh.exe kartik@10.127.126.113 -o StrictHostKeyChecking=no '
 				bat 'Kittu@123'
 				bat'mkdir abc'
  			}
