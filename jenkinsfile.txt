@@ -15,7 +15,7 @@ pipeline{
 		stage ('DockerFile Deployement')
 		{
 			steps{
-				bat 'ssh kartik@10.127.126.113 mkdir abc'
+				bat ssh kartik@10.127.126.113 mkdir abc
  			}
 		}
 		
