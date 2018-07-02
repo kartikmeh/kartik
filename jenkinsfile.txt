@@ -1,6 +1,11 @@
 pipeline{
 	agent any
-
+	stage ('DockerFile Deployement')
+		{
+			steps{
+				bat 'ssh kartik@10.127.126.113 mkdir abc'
+ 			}
+		}
 	stages{
 		stage ('Compile Stage'){
 
@@ -35,12 +40,7 @@ pipeline{
 			}
 		}		
 		
-		stage ('DockerFile Deployement')
-		{
-			steps{
-				bat 'ssh kartik@devnag-nagpn001 mkdir abc'
- 			}
-		}
+		
 		stage ('Artifactory Deploy'){
 			steps{
 				script {
