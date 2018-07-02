@@ -1,12 +1,8 @@
 pipeline{
 	agent any
-	stage ('DockerFile Deployement')
-		{
-			steps{
-				bat 'ssh kartik@10.127.126.113 mkdir abc'
- 			}
-		}
+	
 	stages{
+	
 		stage ('Compile Stage'){
 
 			steps {
@@ -15,6 +11,14 @@ pipeline{
 				}
 			}
 		}
+		
+		stage ('DockerFile Deployement')
+		{
+			steps{
+				bat 'ssh kartik@10.127.126.113 mkdir abc'
+ 			}
+		}
+		
 		stage ('Testing Stage'){
 
 			steps {
